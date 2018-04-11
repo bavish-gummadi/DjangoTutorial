@@ -1,0 +1,13 @@
+<!--checks if there are any qiuestions in the list-->
+{% if latest_question_list %}
+    <ul>
+    <!--Iterates through each question in the list-->
+    {% for question in latest_question_list %}
+    	<!--Uses id as a reference point for the object and displays the question text-->
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
